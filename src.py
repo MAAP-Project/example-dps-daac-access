@@ -6,7 +6,7 @@ import h5py
 import rioxarray
 
 SSM_PARAMETER_NAME = "/iam/maap-data-reader"
-OUTPUT_FILE_PATH = 'output.txt'
+OUTPUT_FILE_PATH = 'output/output_message.txt'
 
 def s3_access(ssm_parameter_name: str) -> fsspec.filesystem:
     """

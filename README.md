@@ -44,6 +44,6 @@ python src.py s3://gesdisc-cumulus-prod-protected/Landslide/Global_Landslide_Now
 python src.py s3://lp-prod-protected/HLSL30.020/HLS.L30.T56JMN.2023225T234225.v2.0/HLS.L30.T56JMN.2023225T234225.v2.0.B11.tif
  ```
 
- ## Usage in a DPS job. 
+ ## DPS usage
 
 The algorithm is registered as `daac-access-example`. It is based on the [following MAAP workspace container image](mas.maap-project.org/root/maap-workspaces/base_images/vanilla:v3.1.1), which already fulfills the above two requirements (AWS auth and python). You can run the algorithm from the MAAP ADE job UI `Submit` tab with the s3 path of your choice. You will not get any output from the job, but it prints messages notifying about data access success to stdout : so after the DPS job finishes and succeeds, you can look at your `dps_output` folder in the ADE and open the `stdout` file of the corresponding job to look at what happened. 
