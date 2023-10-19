@@ -6,7 +6,10 @@ This repository stores code for an example MAAP DPS algorithm that test AWS S3 D
 
 - `src.py` contains the python module in itself.
 - `requirements.txt` lists the required python dependencies. 
-- `run.sh` is the bash script that runs `src.py` and is an entrypoint required for a DPS algorithm, but can be ignored for local usage.
+- `run.sh` see DPS usage below.
+- `algorithm_config.yml` see DPS usage below. 
+- `job_config.yml` see DPS usage below.
+- `register_and_run.ipynb` see DPS usage below. 
 
 ## Requirements
 
@@ -46,4 +49,10 @@ python src.py s3://lp-prod-protected/HLSL30.020/HLS.L30.T56JMN.2023225T234225.v2
 
  ## DPS usage
 
-The algorithm is registered as `daac-access-example`. It is based on the [following MAAP workspace container image](mas.maap-project.org/root/maap-workspaces/base_images/vanilla:v3.1.1), which already fulfills the above two requirements (AWS auth and python). You can run the algorithm from the MAAP ADE job UI `Submit` tab with the s3 path of your choice. You will not get any output from the job, but it prints messages notifying about data access success to stdout : so after the DPS job finishes and succeeds, you can look at your `dps_output` folder in the ADE and open the `stdout` file of the corresponding job to look at what happened. 
+You can refer to the YAML files and the notebook in this repository to see what algorithm is registered and its configuration, or re-register it yourself. 
+
+- `algorithm_config.yml` config for registering the algorithm to the MAAP platform.
+- `job_config.yml` config for submitting a job with the algoritum to the MAAP platform.
+- `register_and_run.ipynb` example commands to programmatically register the algorithm and submit a job. 
+
+And `run.sh` is the bash script that runs `src.py` and is an entrypoint required for a DPS algorithm.
