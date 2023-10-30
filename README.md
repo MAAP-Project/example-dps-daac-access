@@ -29,6 +29,12 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
+or if you are in a conda environment, you can directly update it with 
+
+```
+pip install -r requirements.txt
+```
+
 ### Usage
 
 Here are a few examples of usage of the module, each example using a different DAAC bucket. From the root of the repository after the installation step : 
