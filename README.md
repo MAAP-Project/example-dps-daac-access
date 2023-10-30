@@ -1,6 +1,8 @@
 # Example of AWS S3 access to DAAC buckets in MAAP DPS
 
-This repository stores code for an example MAAP DPS algorithm that test AWS S3 DAAC buckets by reading tiff or hdf5 files stored in these buckets. Access in this module relies on retrieving temporary credentials from the `maap-data-reader` role which was created for multi-DAAC access, and pass these credentials to the filesystem python client `fs` (which relies on `s3fs` for AWS S3).
+This repository stores code for an example MAAP DPS algorithm that provides an example for two tasks : 
+- most importantly, the algorithm test AWS S3 DAAC buckets access by reading tiff or hdf5 files stored in these buckets. Access in this module relies on retrieving temporary credentials from the `maap-data-reader` role which was created for multi-DAAC access, and pass these credentials to the filesystem python client `fs` (which relies on `s3fs` for AWS S3).
+- the algorithm also provides an example of how to generate and discover DPS output. 
 
 ## Structure
 
@@ -62,3 +64,7 @@ You can refer to the YAML files and the notebook in this repository to see what 
 - `register_and_run.ipynb` example commands to programmatically register the algorithm and submit a job. 
 
 And `run.sh` is the bash script that runs `src.py` and is an entrypoint required for a DPS algorithm.
+
+### Discover output in DPS
+
+This algorithm creates a text file at the path described in `src.OUTPUT_FILE_PATH`. The purpose is to show how output is handled in a DPS job. The algorithm just writes a 'job succeeded' type of message in the text file, and, after a sucessful job, this text file can be found in a MAAP user's private bucket, in `dps_output`. 
